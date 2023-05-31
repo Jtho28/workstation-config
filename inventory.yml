@@ -1,0 +1,21 @@
+---
+all:
+  hosts:
+    localhost:
+  vars:
+    waylandpacks:
+    - sway
+    - swaybg
+    - swaylock
+    - wofi
+    - waybar
+
+    # These packages will only be used if Sway absolutely 
+    # cannot be used becuase of some compat issue
+    x-packages:
+    - i3
+    - feh
+    - dmenu
+    - polybar
+    - i3lock
+  

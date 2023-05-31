@@ -1,0 +1,29 @@
+---
+- name: SETUP - setup configurations
+  become: true
+  hosts: localhost
+
+  tasks:
+  - name: Install software apt
+    ansible.builtin.apt: "{{ waylandpacks }}"
+    when: ansible_os_family == "Debian"
+
+  - name: Install software dnf
+    ansible.builtin.dnf:
+      pkg: "{{ waylandpacks }}"
+    when: ansible_os_family == "RedHat"
+
+  - name: Install software pacman
+    community.general.pacman: "{{ waylandpacks }}"
+    when: ansible_os_family == "ArchLinux"
+
+
+
+  ### Copying configuration based on machine specification
+  - name: Copy /.config to ~/.config
+    ansible.builtin.copy:
+      src: lemon/*
+      dest: ~/.config/
+      mode: '777'
+      backup: yes
+    when: ansible_processor_cores >= '4'
