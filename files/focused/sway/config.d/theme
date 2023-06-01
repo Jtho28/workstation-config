@@ -2,7 +2,7 @@
 exec_always ~/.config/sway/scripts/import-gsettings
 
 # Set inner/outer gaps
-gaps inner 10
+gaps inner 0
 #gaps outer 2
 
 # Hide titlebar on windows:

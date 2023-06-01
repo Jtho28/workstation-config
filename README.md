@@ -3,7 +3,8 @@ This is meant to be a continuation of my sway repo. The end goal is to delete th
 
 ## Instructions
 All you need to do is install ansible and run this command... </br>
-`ansible-playbook setup.yml -i inventory.yml --connection=localhost` </br>
+`ansible-playbook setup.yml -i inventory.yml --connection=local --extra-vars "type=lemon" --ask-become-pass` </br>
+Replace type with the sway configuration you'd like.
 
 That being said, if you want to modify the playbook, i've attempted to include some stuff to help test, without modifying your host system. For pip, all you should need is `ansible`. 
 However, you will need podman installed as well.
