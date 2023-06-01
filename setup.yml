@@ -5,25 +5,27 @@
 
   tasks:
   - name: Install software apt
-    ansible.builtin.apt: "{{ waylandpacks }}"
+    ansible.builtin.apt: "{{ swaypacks }}"
     when: ansible_os_family == "Debian"
 
   - name: Install software dnf
     ansible.builtin.dnf:
-      pkg: "{{ waylandpacks }}"
+      pkg: "{{ swaypacks }}"
     when: ansible_os_family == "RedHat"
 
   - name: Install software pacman
-    community.general.pacman: "{{ waylandpacks }}"
+    community.general.pacman: "{{ swaypacks }}"
     when: ansible_os_family == "ArchLinux"
 
 
+  ### Copy some extra configuration stuff in common
+  ### if `extra-configs` is true 
 
-  ### Copying configuration based on machine specification
-  - name: Copy /.config to ~/.config
+  ### Copy sway-related configs, based on `type` var
+  - name: Copy configs to ~/.config
     ansible.builtin.copy:
-      src: lemon/*
-      dest: ~/.config/
+      src: "files/{{ type }}/"
+      dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.config/"
+      owner: "jacksonm"
       mode: '777'
       backup: yes
-    when: ansible_processor_cores >= '4'

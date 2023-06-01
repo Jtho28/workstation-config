@@ -3,7 +3,7 @@ all:
   hosts:
     localhost:
   vars:
-    waylandpacks:
+    swaypacks:
     - sway
     - swaybg
     - swaylock
@@ -12,10 +12,35 @@ all:
 
     # These packages will only be used if Sway absolutely 
     # cannot be used becuase of some compat issue
-    x-packages:
+    xpacks:
     - i3
     - feh
     - dmenu
     - polybar
     - i3lock
+
+    type:
+      "lemon"
+    
+    extra-configs:
+      false
+
+    rust-install:
+      true
+
+    pip-envs:
+      true
+
+    apx-install:
+      false
+
+    install-packages:
+      false
+
+    packs:
+    - neovim
+    - neofetch
+    - podman
+    - distrobox
+
   

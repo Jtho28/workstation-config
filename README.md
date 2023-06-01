@@ -16,3 +16,10 @@ Focused - The focused theme is kinda meant for laptops, I removed a lot of the t
 
 ## First-time Setup
 So eventually I want a playbook that will just automate the entire setup of a workstation, based on the type of machine it is and specific variables that the user can override. I think this would be a cool way to set up computers whenever I get a new one. This could maybe even evolve into trying to create an entire distro remix, but we'll see.
+
+# TO-DO
+- automate sway output config based on ansible magic variables
+- optionally install generic software that I like on my workstation
+- windows and macOS support
+- make focused theme extremely minimal and... well focused
+- create a few other themes
