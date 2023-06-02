@@ -22,5 +22,4 @@ So eventually I want a playbook that will just automate the entire setup of a wo
 - automate sway output config based on ansible magic variables
 - optionally install generic software that I like on my workstation
 - windows and macOS support
-- make focused theme extremely minimal and... well focused
 - create a few other themes
