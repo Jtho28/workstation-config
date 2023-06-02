@@ -24,4 +24,9 @@ So eventually I want a playbook that will just automate the entire setup of a wo
 - windows and macOS support
 - fix location of wofi on focused
 - change the look of wofi, it looks silly rn
-- create a few other themes
+- offer KDE or GNOME option if people don't wan't to tile
+- rust configurator (cringe to write in rust, I know) to set the variables the user might want, maybe give it a xilem(druid?) GUI. This is mainly just for practice in rust. I know it would be easier to write in python but fuck it
+- remove nvim stuff because it's cluttering up my repo!
+- split off some smaller bits of functionality into roles
+- apx(package manager) custom module????
+- turn background pictures into symlinks to save space (already done within the focused folder)

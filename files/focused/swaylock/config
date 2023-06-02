@@ -9,7 +9,8 @@ font=UbuntuMono
 font-size=20
 
 # Ring
-indicator-radius=115
+indicator-radius=80
+indicator-thickness=5
 # line-uses-ring
 line-color=#3b4252
 text-color=#d8dee9

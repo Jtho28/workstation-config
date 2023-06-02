@@ -2,7 +2,7 @@
 Arc-Dark Color Scheme
 */
 
-@define-color highlight #5294e2;
+@define-color highlight rgba(0, 0, 0, .5);
 @define-color base1  #404552;
 @define-color base2 #40455;
 @define-color base3  #4b5160;
@@ -21,11 +21,12 @@ window {
     padding-left: 10px;
     border-radius: 5px;
     border:none;
-    color: base1;
+    color: @highlight;
+    background-color: @highlight;
 }
 
 #inner-box {
-    background-color: @base3;
+    background-color: @highlight;
 }
 
 #outer-box {
@@ -39,9 +40,6 @@ window {
     color: white;
 }
 
-#entry:nth-child(even) {
-    background-color: @base1;
-}
 
 #entry:selected {
     background-color: @highlight;
