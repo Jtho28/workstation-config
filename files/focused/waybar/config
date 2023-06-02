@@ -1,14 +1,7 @@
 // Global 
 {
     "layer": "top",
-    "position": "top",
-    "margin-top": 10,
-    "margin-left": 10,
-    "margin-right": 10,
-    //"output": "DP-1",
-    "name": "top-bar",
-
-    // If height property would be not present, it'd be calculated dynamically
+    "position": "bottom",
     "height": 2,
 
     "modules-left": [
