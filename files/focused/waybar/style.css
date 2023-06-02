@@ -63,7 +63,7 @@ Arc-Dark Color Scheme
     color: rgb(255,255,255);
     background-color: rgb(64, 64, 64);
     font-family: UbuntuMono;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 600;
     border-radius: 2;
 }
@@ -174,13 +174,11 @@ Arc-Dark Color Scheme
 }
 
 #workspaces {
-    font-size:13px;
 }
 
 #workspaces button {
     border-bottom: 1px solid transparent;
     margin-bottom: 0px;
-    padding:0px;
     color: white;
     border-radius: 1;
  
@@ -189,7 +187,6 @@ Arc-Dark Color Scheme
 #workspaces button.focused {
     border-bottom: 3px solid  @highlight;
     margin-bottom: 0px;
-    padding-left:0;
 }
 
 #workspaces button.urgent {
@@ -202,19 +199,16 @@ Arc-Dark Color Scheme
     margin-bottom: 0px;
     padding-left: 5px;
     padding-right: 5px;
-    font-size:13px;
     color: @highlight;
 }
 
 #custom-launcher {
-    font-size:15px;
     margin-left:15px;
     margin-right:10px;
 }
 
 #backlight.icon {
     padding-right:1px;
-    font-size: 13px;
 }
 
 #modules-right {
