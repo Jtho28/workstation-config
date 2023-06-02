@@ -53,6 +53,8 @@ Arc-Dark Color Scheme
     min-height: 0;
     margin: 0px;
     padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 /* The whole bar */
@@ -63,7 +65,7 @@ Arc-Dark Color Scheme
     font-family: UbuntuMono;
     font-size: 13px;
     font-weight: 600;
-    border-radius: 0 ;
+    border-radius: 2;
 }
 
 /* Every modules */
@@ -84,8 +86,7 @@ Arc-Dark Color Scheme
 #modules-left,
 #modules-center,
 #modules-right {
-    padding:0.5rem 0.6rem;
-    margin: 1px 0px;
+    
 }
 
 /* -----------------------------------------------------------------------------
@@ -128,6 +129,8 @@ Arc-Dark Color Scheme
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #memory.warning {
@@ -155,7 +158,7 @@ Arc-Dark Color Scheme
 }
 
 #pulseaudio {
-    padding-top:6px;
+    
 }
 
 #pulseaudio.muted {
@@ -175,11 +178,11 @@ Arc-Dark Color Scheme
 }
 
 #workspaces button {
-    border-bottom: 3px solid transparent;
+    border-bottom: 1px solid transparent;
     margin-bottom: 0px;
     padding:0px;
     color: white;
-    border-radius: 2;
+    border-radius: 1;
  
 }
 
@@ -195,9 +198,9 @@ Arc-Dark Color Scheme
 }
 
 #custom-power {
-    border-bottom: 3px solid transparent;
+    border-bottom: 1px solid transparent;
     margin-bottom: 0px;
-    padding-left: 10px;
+    padding-left: 5px;
     padding-right: 5px;
     font-size:13px;
     color: @highlight;
