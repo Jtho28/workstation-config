@@ -22,4 +22,6 @@ So eventually I want a playbook that will just automate the entire setup of a wo
 - automate sway output config based on ansible magic variables
 - optionally install generic software that I like on my workstation
 - windows and macOS support
+- fix location of wofi on focused
+- change the look of wofi, it looks silly rn
 - create a few other themes
