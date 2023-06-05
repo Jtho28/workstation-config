@@ -30,3 +30,5 @@ So eventually I want a playbook that will just automate the entire setup of a wo
 - split off some smaller bits of functionality into roles
 - apx(package manager) custom module????
 - turn background pictures into symlinks to save space (already done within the focused folder)
+- put configs somewhere else so that all of this shit doesn't get pulled down if you don't need it
+- basically, only pull what is needed
