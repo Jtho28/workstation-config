@@ -32,3 +32,4 @@ So eventually I want a playbook that will just automate the entire setup of a wo
 - turn background pictures into symlinks to save space (already done within the focused folder)
 - put configs somewhere else so that all of this shit doesn't get pulled down if you don't need it
 - basically, only pull what is needed
+- create theme standards like accent colors and base colors and whatnot.
