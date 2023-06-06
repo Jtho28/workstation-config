@@ -1,19 +1,49 @@
-use clap::Parser;
+use std::path::PathBuf;
+use clap::{Parser, Subcommand};
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
-struct Args {
-    #[arg(short, long)]
-    name: String,
+struct Cli {
+    
+    name: Option<String>,
 
-    #[arg(short, long, default_value_t = 1)]
-    count: u8,
+    #[arg(short, long, value_name = "FILE")]
+    config: Option<PathBuf>,
+
+    #[arg(short, long, action = clap::ArgAction::Count)]
+    debug: u8,
+
+    #[command(Subcommand)]
+    command: Option<Commands>
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    Test {
+        #[arg(short, long)]
+        list: bool,
+    },
 }
 
 fn main() {
-    let args = Args::parse();
+    let cli = Cli::parse();
 
-    for _ in 0..args.count {
-        println!("Hello {}", args.name)
+    if let Some(name) = cli.name.as_deref() {
+        println!("Value for name: {name}");
+    }
+
+    if let Some(config_path) = cli.config.as_deref() {
+        println!("Value for config: {}", config_path.display());
+    }
+
+    match &cli.command {
+        Some(Commands::Test {list}) => {
+            if *list {
+                println!("Printing testing lists...");
+            } else {
+                println!("Not printing testing lists...");
+            }
+        }
+        None => {}
     }
 }

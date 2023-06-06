@@ -60,7 +60,7 @@ Arc-Dark Color Scheme
 #waybar {
     background: transparent;
     color: rgb(255,255,255);
-    background-color: rgb(64, 64, 64);
+    background-color: rgba(64, 64, 64, 0.4);
     font-family: UbuntuMono;
     font-size: 10px;
     font-weight: 600;
