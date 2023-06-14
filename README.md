@@ -20,16 +20,13 @@ So eventually I want a playbook that will just automate the entire setup of a wo
 
 # TO-DO
 - automate sway output config based on ansible magic variables
-- optionally install generic software that I like on my workstation
 - windows and macOS support
 - fix location of wofi on focused
 - change the look of wofi, it looks silly rn
 - offer KDE or GNOME option if people don't wan't to tile
-- rust configurator (cringe to write in rust, I know) to set the variables the user might want, maybe give it a xilem(druid?) GUI. This is mainly just for practice in rust. I know it would be easier to write in python but fuck it
-- remove nvim stuff because it's cluttering up my repo!
 - split off some smaller bits of functionality into roles
-- apx(package manager) custom module????
 - turn background pictures into symlinks to save space (already done within the focused folder)
 - put configs somewhere else so that all of this shit doesn't get pulled down if you don't need it
 - basically, only pull what is needed
 - create theme standards like accent colors and base colors and whatnot.
+- gut rust stuff and use ansible-runner to create the thing I was invisioning
