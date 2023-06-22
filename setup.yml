@@ -4,22 +4,30 @@
   hosts: localhost
 
   tasks:
-  - name: Install software apt
-    ansible.builtin.apt: "{{ swaypacks }}"
+  - name: Install sway apt
+    ansible.builtin.apt:
+      name: "{{ swaypacks }}"
     when: ansible_os_family == "Debian"
 
-  - name: Install software dnf
+  - name: Install sway dnf
     ansible.builtin.dnf:
       pkg: "{{ swaypacks }}"
-    when: ansible_os_family == "RedHat"
+    when: 
+      ansible_os_family == "RedHat" and sway_install == True
 
-  - name: Install software pacman
-    community.general.pacman: "{{ swaypacks }}"
+  - name: Install sway pacman
+    community.general.pacman:
+      name: "{{ swaypacks }}"
     when: ansible_os_family == "ArchLinux"
+
+  - name: Additional packages
+    ansible.builtin.package:
+      name: "{{ packs }}"
+    when: install_packages == True
 
 
   ### Copy some extra configuration stuff in common
-  ### if `extra-configs` is true 
+  ### if `extra-configs` is true
 
   ### Copy sway-related configs, based on `type` var
   - name: Copy configs to ~/.config
@@ -28,3 +36,25 @@
       dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.config/"
       owner: "jacksonm"
       mode: '777'
+  
+  - name: Rust installation
+    block:
+      - name: Check if installed
+        ansible.builtin.shell: command -v cargo
+        register: cargo_exists
+        ignore_errors: yes
+      - name: Download Installer
+        when: cargo_exists is failed
+        get_url:
+          url: https://sh.rustup.rs
+          dest: /tmp/sh.rustup.rs
+          mode: '0755'
+          force: 'yes'
+        tags:
+          - rust
+      - name: Install Rust/Cargo
+        when: cargo_exists is failed
+        shell: /tmp/sh.rustup.rs -y
+        tags:
+          - rust
+    when: rust_install == True

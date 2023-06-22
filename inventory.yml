@@ -23,19 +23,22 @@ all:
       "lemon"
     
     extra-configs:
-      false
+      False
 
-    rust-install:
-      true
+    rust_install:
+      True
 
     pip-envs:
-      true
+      True
 
     apx-install:
-      false
+      False
 
-    install-packages:
-      false
+    install_packages:
+      True
+
+    sway_install:
+      False
 
     packs:
     - neovim
@@ -43,5 +46,5 @@ all:
     - podman
     - distrobox
     - alacritty
-    - tmux
+    - firefox
   
