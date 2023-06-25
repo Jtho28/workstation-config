@@ -22,7 +22,7 @@ all:
     type:
       "lemon"
     
-    extra-configs:
+    extra_configs:
       False
 
     rust_install:
@@ -40,6 +40,12 @@ all:
     sway_install:
       False
 
+    ansible_workstation:
+      False
+
+    linux_gaming:
+      False
+
     packs:
     - neovim
     - neofetch
@@ -47,4 +53,8 @@ all:
     - distrobox
     - alacritty
     - firefox
+
+    workstation_pip_packs:
+    - ansible
+    - pymgit
   

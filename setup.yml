@@ -23,6 +23,7 @@
   - name: Additional packages
     ansible.builtin.package:
       name: "{{ packs }}"
+      state: present
     when: install_packages == True
 
 
@@ -37,6 +38,7 @@
       owner: "jacksonm"
       mode: '777'
   
+  # must add [ -f ~/.cargo/env ] && source $HOME/.cargo/env to rc
   - name: Rust installation
     block:
       - name: Check if installed
@@ -54,7 +56,8 @@
           - rust
       - name: Install Rust/Cargo
         when: cargo_exists is failed
-        shell: /tmp/sh.rustup.rs -y
+        ansible.builtin.shell: /tmp/sh.rustup.rs -y
         tags:
           - rust
+  
     when: rust_install == True
